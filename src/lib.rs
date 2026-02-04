@@ -801,6 +801,7 @@ impl CompilerOptions {
 	option!(Optimization, optimization(level: OptimizationLevel));
 	option!(Obfuscate, obfuscate(enable: bool));
 	option!(VulkanUseEntryPointName, vulkan_use_entry_point_name(enable: bool));
+	option!(VulkanInvertY, vulkan_invert_y(enable: bool));
 	option!(GLSLForceScalarLayout, glsl_force_scalar_layout(enable: bool));
 	option!(EmitSpirvDirectly, emit_spirv_directly(enable: bool));
 
