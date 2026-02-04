@@ -32,7 +32,12 @@ fn main() {
 		println!("cargo:rustc-link-search=native={lib_dir}");
 	}
 
-	println!("cargo:rustc-link-lib=dylib=slang");
+	let lib_file = if let Ok(file) = env::var("SLANG_LIB_FILE") {
+		file
+	} else {
+		String::from("slang")
+	};
+	println!("cargo:rustc-link-lib=dylib={}", lib_file);
 
 	let out_dir = env::var("OUT_DIR").expect("Couldn't determine output directory.");
 
